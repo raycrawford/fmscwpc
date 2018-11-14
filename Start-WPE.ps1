@@ -42,7 +42,7 @@ if ($taskExists) {
     -Once `
     -At (Get-Date) `
     -RepetitionInterval (New-TimeSpan -Minutes 1) `
-    -RepetitionDuration ([System.TimeSpan]::MaxValue)
+    -RepetitionDuration (New-TimeSpan -Days 9999)
   $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew
   $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" `
     -LogonType ServiceAccount -RunLevel Highest
