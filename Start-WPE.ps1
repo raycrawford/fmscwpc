@@ -21,7 +21,7 @@
 
 .NOTES
   Version:          1.0
-  Author:           Nick Behrens
+  Author:           Ray Crawford
   Creation Date:    11/13/2018
 
 .EXAMPLE
