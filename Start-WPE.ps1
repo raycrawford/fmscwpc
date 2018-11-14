@@ -43,8 +43,13 @@ if ($taskExists) {
     -At (Get-Date) `
     -RepetitionInterval (New-TimeSpan -Minutes 2) `
     -RepetitionDuration ([System.TimeSpan]::MaxValue)
+  $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew
+  $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" `
+    -LogonType ServiceAccount -RunLevel Highest
 
-  Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "startWPE" -Description "Ensuring FM WPE is running"
+  Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "startWPE" `
+    -Principal $principal `
+    -Description "Ensuring FM WPE is running"
 }
 
 $time = Get-Date -Format o
