@@ -20,9 +20,12 @@
   Maybe write to a file for log purposes...
 
 .NOTES
-  Version:          1.0
+  Version:          1.1
   Author:           Ray Crawford
   Creation Date:    11/13/2018
+
+  v1.1 updated the Duration interval from ; ([System.TimeSpan]::MaxValue) which worked on 2012R2 to (New-TimeSpan -Days 9999)
+  which works on Server 2016 (and should, although untested, work on 2012R2).
 
 .EXAMPLE
   ./Start-WPE.ps1
