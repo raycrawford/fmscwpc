@@ -41,7 +41,7 @@ if ($taskExists) {
   $trigger = New-ScheduledTaskTrigger `
     -Once `
     -At (Get-Date) `
-    -RepetitionInterval (New-TimeSpan -Minutes 2) `
+    -RepetitionInterval (New-TimeSpan -Minutes 1) `
     -RepetitionDuration ([System.TimeSpan]::MaxValue)
   $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew
   $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" `
