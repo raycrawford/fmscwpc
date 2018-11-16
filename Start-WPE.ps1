@@ -50,7 +50,7 @@ if ($taskExists) {
   $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" `
     -LogonType ServiceAccount -RunLevel Highest
 
-  Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "startWPE" `
+  Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "$taskName" `
     -Principal $principal `
     -Description "Ensuring FM WPE is running"
 }
